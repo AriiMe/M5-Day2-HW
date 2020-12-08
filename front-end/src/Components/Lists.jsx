@@ -19,19 +19,13 @@ export class Lists extends Component {
   render() {
     return (
       <Container>
-        <Row className="mt-2 mb-2">
+        <Row>
           {this.state.students.length > 0 &&
             this.state.students.map((student) => {
               const { name, surname, email, dob } = student;
               return (
-                <Col
-                  className="mt-5 mb-5"
-                  xs={4}
-                  key={uniqid()}
-                  className=" pl-0"
-                  id="name-col"
-                >
-                  <Card.Title className="mt-5 mb-5" className="title">
+                <Col className="mt-5 mb-5" xs={3} key={uniqid()} id="name-col">
+                  <Card.Title className="title">
                     {name} {surname}
                   </Card.Title>
                   <Card.Text id="card-text">{email}</Card.Text>
