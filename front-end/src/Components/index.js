@@ -25,9 +25,10 @@ export async function fetchListOfStudents() {
     try {
       let response = await fetch(
         `http://localhost:3001/students/`,
+        
         {
           method: "POST",
-          body: JSON.stringify(post),
+          body: post,
           
         }
       );

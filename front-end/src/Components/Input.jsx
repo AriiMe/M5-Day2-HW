@@ -2,7 +2,7 @@
 
 import React, { Component } from "react";
 import { Container, Form, Col, Row, Button } from "react-bootstrap";
-import { createStudent } from ".";
+import { createStudent } from "./index.js";
 import uniqid from "uniqid";
 
 export class Input extends Component {
@@ -12,21 +12,10 @@ export class Input extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Post Submitted");
+    alert("post submited");
+    await createStudent(this.state.student);
     this.setState({ student: { name: "", surname: "", email: "", dob: "" } });
   };
-  componentDidMount() {
-    // Simple POST request with a JSON body using fetch
-    const requestOptions = {
-      method: "POST",
-      body: JSON.stringify({ name: "", surname: "", email: "", dob: "" }),
-    };
-    fetch("http://localhost:3001/students/", requestOptions)
-      .then((response) => response.json())
-      .then((data) =>
-        this.setState({ name: "", surname: "", email: "", dob: "" })
-      );
-  }
 
   updateForm = (e) => {
     let object = { ...this.state.student };
@@ -38,8 +27,8 @@ export class Input extends Component {
     return (
       <>
         <Container>
-          <Form>
-            <Form.Group controlId="formBasicEmail">
+          <Form onSubmit={(e) => this.handleSubmit(e)}>
+            <Form.Group>
               <Form.Label>Email address</Form.Label>
               <Form.Control
                 id="email"
