@@ -22,13 +22,17 @@ export async function fetchListOfStudents() {
   }
 
   export async function createStudent(post) {
+      console.log(post)
     try {
       let response = await fetch(
-        `http://localhost:3001/students/`,
+        `http://localhost:3001/students`,
         
         {
           method: "POST",
-          body: post,
+          body: JSON.stringify(post),
+          headers: {
+            "Content-Type": "application/json",
+          },
           
         }
       );

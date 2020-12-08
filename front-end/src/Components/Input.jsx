@@ -3,7 +3,6 @@
 import React, { Component } from "react";
 import { Container, Form, Col, Row, Button } from "react-bootstrap";
 import { createStudent } from "./index.js";
-import uniqid from "uniqid";
 
 export class Input extends Component {
   state = {
