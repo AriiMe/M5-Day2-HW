@@ -1,0 +1,29 @@
+{
+  "name": "day2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AriiMe/M5-Day2-HW.git"
+  },
+  "keywords": [],
+  "author": "Ari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AriiMe/M5-Day2-HW/issues"
+  },
+  "homepage": "https://github.com/AriiMe/M5-Day2-HW#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "uniqid": "^5.2.0"
+  }
+}
